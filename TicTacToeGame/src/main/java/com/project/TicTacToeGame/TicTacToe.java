@@ -1,5 +1,7 @@
 package com.project.TicTacToeGame;
 
+import java.util.Scanner;
+
 public class TicTacToe {
 
 	public static void main(String[] args) {
@@ -13,9 +15,24 @@ public class TicTacToe {
 		String firstRow = "'1','2','3'";
 
 		printGameBoard(board);
-
+		
+		String input = askUserToEnterNumber();
+		
 		return firstRow;
 	}
+
+	protected static String askUserToEnterNumber() {
+		String inputNumber;
+		try(Scanner scanner = new Scanner(System.in)){
+			
+			System.out.println("Please enter the number between 1-9 that you want to play:");
+			inputNumber = scanner.nextLine();
+			System.out.println(inputNumber);
+			
+		}
+		return inputNumber;
+	}
+	
 
 	public static void printGameBoard(char[][] board) {
 

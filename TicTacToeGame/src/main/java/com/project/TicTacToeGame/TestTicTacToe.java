@@ -11,4 +11,13 @@ public class TestTicTacToe {
 		Assert.assertEquals( "'1','2','3'",  TicTacToe.createGameBoard()); 
 	}
 	
+	@Test
+	public void shouldReturnIfPlayerEnteredNumberIsValid(){
+		
+		Integer enteredNum = Integer.valueOf(TicTacToe.askUserToEnterNumber()); 
+		
+		Assert.assertTrue(9 <= enteredNum && 1 <= enteredNum);
+	}
+	
+	
 }
