@@ -12,12 +12,16 @@ public class TestTicTacToe {
 	}
 	
 	@Test
-	public void shouldReturnIfPlayerEnteredNumberIsValid(){
+	public void shouldReturnTrueIfPlayerEnteredNumberisNotBetweenOneAndNine(){
 		
-		Integer enteredNum = Integer.valueOf(TicTacToe.askUserToEnterNumber()); 
 		
-		Assert.assertTrue(9 <= enteredNum && 1 <= enteredNum);
+		Assert.assertTrue(TicTacToe.checkIfEnteredNumberisValid(9));
 	}
 	
-	
+	@Test
+	public void shouldReturnFalseIfPlayerEnteredNumberisNotBetweenOneAndNine(){
+		
+		
+		Assert.assertFalse(TicTacToe.checkIfEnteredNumberisValid(10));
+	}
 }

@@ -16,17 +16,30 @@ public class TicTacToe {
 
 		printGameBoard(board);
 		
-		String input = askUserToEnterNumber();
+		Integer inputNumber = askUserToEnterNumber();
+		
+		checkIfEnteredNumberisValid(inputNumber);
+		
 		
 		return firstRow;
 	}
 
-	protected static String askUserToEnterNumber() {
-		String inputNumber;
+	protected static boolean checkIfEnteredNumberisValid(Integer inputNumber) {
+		boolean validInput = false;
+		if (!(9 >= inputNumber && 1 <= inputNumber)) {
+			System.out.println("Invalid input- Please enter a valid box number between 1 and 9::");
+		} else {
+			validInput = true;
+		}
+		return validInput;
+	}
+
+	protected static Integer askUserToEnterNumber() {
+		Integer inputNumber;
 		try(Scanner scanner = new Scanner(System.in)){
 			
 			System.out.println("Please enter the number between 1-9 that you want to play:");
-			inputNumber = scanner.nextLine();
+			inputNumber = scanner.nextInt();
 			System.out.println(inputNumber);
 			
 		}
