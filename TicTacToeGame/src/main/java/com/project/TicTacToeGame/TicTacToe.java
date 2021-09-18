@@ -20,8 +20,21 @@ public class TicTacToe {
 		
 		checkIfEnteredNumberisValid(inputNumber);
 		
+		String turn = "X";
+		alternatePlay(turn);
 		
 		return firstRow;
+	}
+
+	protected static String alternatePlay(String turn) {
+		
+		if (turn.equals("X")) {
+			turn = "O";
+		}
+		else {
+			turn = "X";
+		}
+		return turn;
 	}
 
 	protected static boolean checkIfEnteredNumberisValid(Integer inputNumber) {

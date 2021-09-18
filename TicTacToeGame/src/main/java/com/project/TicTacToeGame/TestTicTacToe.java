@@ -24,4 +24,12 @@ public class TestTicTacToe {
 		
 		Assert.assertFalse(TicTacToe.checkIfEnteredNumberisValid(10));
 	}
+	
+	@Test
+	public void shouldReturnOIfPlayerXPlayed(){
+		
+		
+		Assert.assertEquals("O",TicTacToe.alternatePlay("X"));
+	}
+	
 }
